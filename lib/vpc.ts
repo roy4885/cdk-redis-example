@@ -58,10 +58,6 @@ export class VpcStack extends cdk.Stack {
         });
         redisCluster.addDependsOn(redisSubnetGroup);
 
-        new CfnOutput(this, 'redisClusterPrimaryUrl', { value: redisCluster.attrPrimaryEndPointAddress});
-        new CfnOutput(this, 'redisClusterPrimaryPort', { value: redisCluster.attrPrimaryEndPointPort});
-        new CfnOutput(this, 'redisClusterReadUrl', { value: redisCluster.attrReadEndPointAddresses});
-        new CfnOutput(this, 'redisClusterReadPort', { value: redisCluster.attrReadEndPointPorts});
         
 
     }
